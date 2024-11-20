@@ -13,7 +13,7 @@
                     class="badge badge-pill badge-success">new</span></a>
         </li> -->
         <li class="side a-collapse short ">
-            <a href="./" class="side-item selected"><i class="fas fa-home mr-1"></i>Dashboard</a>
+            <a href="{{ route('admin.pages.home') }}" class="side-item selected"><i class="fas fa-home mr-1"></i>Dashboard</a>
         </li>
 
         <ul class="side a-collapse short">
