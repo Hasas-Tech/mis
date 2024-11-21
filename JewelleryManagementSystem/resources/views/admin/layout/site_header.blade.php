@@ -1,4 +1,3 @@
-<div class="bmd-layout-container bmd-drawer-f-l avam-container animated bmd-drawer-in">
     <header class="bmd-layout-header ">
         <div class="navbar navbar-light bg-faded animate__animated animate__fadeInDown">
             <button class="navbar-toggler animate__animated animate__wobble animate__delay-2s" type="button"

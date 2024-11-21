@@ -13,7 +13,7 @@
                     class="badge badge-pill badge-success">new</span></a>
         </li> -->
         <li class="side a-collapse short ">
-            <a href="{{ route('admin.pages.home') }}" class="side-item selected"><i class="fas fa-home mr-1"></i>Dashboard</a>
+            <a href="{{ route('dashboard') }}" class="side-item selected"><i class="fas fa-home mr-1"></i>Dashboard</a>
         </li>
 
         <ul class="side a-collapse short">
@@ -130,12 +130,12 @@
                 <!-- <span	class="badge badge-success">4</span> -->
                 <i class="fas fas fa-chevron-down arrow"></i></a>
             <div class="side-item-container hide animated">
-                <li class="side-item"><a href="./newUser.html"><i class="fas fa-angle-right mr-2"></i>New User</a>
+                <li class="side-item"><a href="{{ route ('admin.pages.users.addUser') }}"><i class="fas fa-angle-right mr-2"></i>Create New User</a>
                 </li>
-                <li class="side-item"><a href="./allUsers.html"><i
+                <li class="side-item"><a href="{{ route ('admin.pages.users.allUsers') }}"><i
                             class="fas fa-angle-right mr-2"></i>All Users</a></li>
-                <li class="side-item"><a href="./dark-mode.html"><i class="fas fa-angle-right mr-2"></i>New Role</a></li>
-                <li class="side-item"><a href="./rtl.html"><i class="fas fa-angle-right mr-2"></i>All Roles</a></li>
+                <li class="side-item"><a href="{{ route ('admin.pages.users.addRole') }}"><i class="fas fa-angle-right mr-2"></i>New Role</a></li>
+                <li class="side-item"><a href="{{ route ('admin.pages.users.allRole') }}"><i class="fas fa-angle-right mr-2"></i>All Roles</a></li>
             </div>
         </ul>
     </div>

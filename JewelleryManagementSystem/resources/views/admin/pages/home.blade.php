@@ -3,7 +3,7 @@
     
 <main class="bmd-layout-content">
     <div class="container-fluid ">
-
+        
         <!-- content -->
         <!-- breadcrumb -->
 
@@ -318,10 +318,8 @@
                         <canvas id="myChart2" width="10" height="13"></canvas>
 
                     </div>
-
                 </div>
             </div>
-
         </div>
     </div>
 </main>
