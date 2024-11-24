@@ -12,13 +12,31 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id(); // auto-incrementing primary key 'id'
-            $table->string('name'); // Name of the user
-            $table->string('email')->unique(); // Email field with unique constraint
-            $table->string('password'); // Password field
-            $table->string('role_id'); // User role (e.g. admin, user, etc.)
-            $table->string('image')->nullable(); // Profile image field, nullable in case not uploaded
-            $table->timestamps(); // Created at & Updated at timestamps
+            $table->id();
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
+            $table->string('role_name');
+            $table->foreign('role_name')->references('role_name')->on('roles'); 
+            $table->string('image');
+            $table->rememberToken();
+            $table->timestamps();
+        });
+
+        Schema::create('password_reset_tokens', function (Blueprint $table) {
+            $table->string('email')->primary();
+            $table->string('token');
+            $table->timestamp('created_at')->nullable();
+        });
+
+        Schema::create('sessions', function (Blueprint $table) {
+            $table->string('id')->primary();
+            $table->foreignId('user_id')->nullable()->index();
+            $table->string('ip_address', 45)->nullable();
+            $table->text('user_agent')->nullable();
+            $table->longText('payload');
+            $table->integer('last_activity')->index();
         });
     }
 
@@ -28,5 +46,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('users');
+        Schema::dropIfExists('password_reset_tokens');
+        Schema::dropIfExists('sessions');
     }
 };
