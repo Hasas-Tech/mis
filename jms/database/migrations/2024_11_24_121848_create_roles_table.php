@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('roles', function (Blueprint $table) {
             $table->id('role_id'); // Primary key with custom column name
-            $table->string('role_name')->unique(); // Role name, with a unique constraint
+            $table->string('role_name')->unique()->constrant(); // Role name, with a unique constraint
             $table->timestamps(); // Created at & Updated at timestamps
         });
     }
