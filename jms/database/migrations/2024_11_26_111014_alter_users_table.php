@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('roles', function (Blueprint $table) {
-            $table->id('role_id'); // Primary key with custom column name
-            $table->string('role_type')->unique(); // Role name, with a unique constraint
-            $table->timestamps(); // Created at & Updated at timestamps
+        Schema::table('users', function (Blueprint $table) {
+
+            // $table->foreign('role_type')->references('role_type')->on('roles');
+            
         });
     }
 
@@ -23,6 +23,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('roles');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('role');
+        });
     }
 };
