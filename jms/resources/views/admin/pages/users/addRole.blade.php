@@ -44,18 +44,15 @@
             <button class="btn btn-info" >English</button>
             <hr class="mt-0 ">
 
-                    <form class="col-md-6 m-auto">
+                    <form class="col-md-6 m-auto" action="" method="POST" id="roles" name="roles">
+                        @csrf
                         <div class="form-row mb-2">
                             <div class="col">
-                                <label class="fw-bolder p-1">Role</label>
-                                <select class="form-control" id="">
-                                    <option>Admin</option>
-                                    <option>Author</option>
-                                    <option selected>User</option>
-                                </select>
+                                <label>Role Type</label>
+                                <input class="form-control" type="text" placeholder="Enter role type" id="role_type" name="role_type">
                             </div>
                         </div>
-                        <button class="btn btn-info m-1">Save</button> 
+                        <button class="btn btn-info m-1" type="submit">Add Role</button> 
                       </form>
         </div>
         <!-- end of form -->
