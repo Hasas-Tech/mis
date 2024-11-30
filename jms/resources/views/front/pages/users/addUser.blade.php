@@ -71,7 +71,7 @@
                                 <label class="fw-bolder p-1">Role</label>
                                 <select class="form-control" id="">
                                     @foreach ($allRole as $role)
-                                    <option>$allRole->'role_type'</option> 
+                                    <option>{{ $role->role_type }}</option> 
                                     @endforeach
                                 </select>
                             </div>
