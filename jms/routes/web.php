@@ -19,9 +19,10 @@ use App\Http\Controllers\roleController;
 
 Route::get('/', [dashboardController::class, 'dashboard'])->name('/');
 Route::get('/dashboard', [dashboardController::class, 'dashboard'])->name('dashboard');
-Route::get('/login', [adminController::class, 'login'])->name('login');
+Route::get('/userLogin', [userController::class, 'userLogin'])->name('userLogin');
 Route::get('/addUser', [userController::class, 'addUser'])->name('admin.pages.users.addUser');
 Route::get('/allUsers', [userController::class, 'allUsers'])->name('admin.pages.users.allUsers');
 Route::get('/allRole', [roleController::class, 'allRole'])->name('admin.pages.users.allRole');
 Route::get('/addRole', [roleController::class, 'addRole'])->name('admin.pages.users.addRole');
+Route::post('/addRole', [roleController::class, 'storeRole'])->name('admin.pages.users.addRole');
 

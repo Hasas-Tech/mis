@@ -47,16 +47,19 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach($allRoles as $role)
+                    
                     <tr>
-                        <td>1</td>
+                        <td>{{ $role -> role_id }}</td>
                         <td class="text-center">
-                            <label class="btn btn-outline-info" for="">ADMIN</label>
+                            <label class="btn btn-outline-info" for="">{{ $role -> role_type }}</label>
                         </td>
                         <td class="text-center">
                             <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
                             <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
                         </td>
                     </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
