@@ -49,30 +49,30 @@
                           <div class="col">
                             <label class="fw-bolder p-1">Name</label>
                             <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-                            <input type="text" class="form-control" placeholder="Enter Name">
+                            <input type="text" class="form-control" placeholder="Enter Name" name="name" id="name">
                           </div>
                           <div class="col">
                             <label class="fw-bolder p-1">Email</label>
-                            <input type="email" class="form-control" placeholder="Enter Email">
+                            <input type="email" class="form-control" placeholder="Enter Email" name="email" id="email">
                           </div>
                         </div>
                         <div class="form-row mb-2">
                             <div class="col">
                                 <label class="fw-bolder p-1">Password</label>
-                              <input type="password" class="form-control" placeholder="Enter Password">
+                              <input type="password" class="form-control" placeholder="Enter Password"  name="password" id="password">
                             </div>
                             <div class="col">
                                 <label class="fw-bolder p-1">Confirm Password</label>
-                                <input type="password" class="form-control" placeholder="Confirm Password">
+                                <input type="password" class="form-control" placeholder="Confirm Password"  name="password_confirmation" id="password_confirmation">
                             </div>
                         </div>
                         <div class="form-row mb-2">
                             <div class="col">
                                 <label class="fw-bolder p-1">Role</label>
                                 <select class="form-control" id="">
-                                    <option>Admin</option>
-                                    <option>Author</option>
-                                    <option selected>User</option>
+                                    @foreach ($allRole as $role)
+                                    <option>$allRole->'role_type'</option> 
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="col">
