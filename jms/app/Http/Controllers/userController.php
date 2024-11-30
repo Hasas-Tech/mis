@@ -11,10 +11,10 @@ class userController extends Controller
     }
     
     public function addUser(){
-        return view('admin.pages.users.addUser');
+        return view('front.pages.users.addUser');
     }
 
     public function allUsers(){
-        return view('admin.pages.users.allUsers');
+        return view('front.pages.users.allUsers');
     }
 }

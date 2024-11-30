@@ -1,4 +1,4 @@
-@extends('admin.layout.app')
+@extends('front.layout.app')
 @section('content')
 
 <main class="bmd-layout-content">
@@ -33,7 +33,7 @@
                         <p class="pt-2">All Roles</p>
                     </div>
                     <div class="col-md-6 text-right">
-                        <button class="btn btn-info" onclick="window.location='{{ route('admin.pages.users.addRole') }}'">New Role</button>
+                        <button class="btn btn-info" onclick="window.location='{{ route('front.pages.users.addRole') }}'">New Role</button>
                     </div>
                 </div>
             </div>

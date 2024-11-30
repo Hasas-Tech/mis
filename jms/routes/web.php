@@ -20,12 +20,12 @@ use App\Http\Controllers\roleController;
 Route::get('/', [dashboardController::class, 'dashboard'])->name('/');
 Route::get('/dashboard', [dashboardController::class, 'dashboard'])->name('dashboard');
 Route::get('/userLogin', [userController::class, 'userLogin'])->name('userLogin');
-Route::get('/addUser', [userController::class, 'addUser'])->name('admin.pages.users.addUser');
-Route::get('/allUsers', [userController::class, 'allUsers'])->name('admin.pages.users.allUsers');
-Route::get('/allRole', [roleController::class, 'allRole'])->name('admin.pages.users.allRole');
-Route::get('/addRole', [roleController::class, 'addRole'])->name('admin.pages.users.addRole');
-Route::post('/addRole', [roleController::class, 'storeRole'])->name('admin.pages.users.addRole');
-Route::get('/delRole', [roleController::class, 'delRole'])->name('admin.pages.users.delRole');
+Route::get('/addUser', [userController::class, 'addUser'])->name('front.pages.users.addUser');
+Route::get('/allUsers', [userController::class, 'allUsers'])->name('front.pages.users.allUsers');
+Route::get('/allRole', [roleController::class, 'allRole'])->name('front.pages.users.allRole');
+Route::get('/addRole', [roleController::class, 'addRole'])->name('front.pages.users.addRole');
+Route::post('/addRole', [roleController::class, 'storeRole'])->name('front.pages.users.addRole');
+Route::get('/delRole', [roleController::class, 'delRole'])->name('front.pages.users.delRole');
 
 
 

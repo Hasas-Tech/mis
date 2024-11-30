@@ -1,5 +1,5 @@
-@extends('admin.layout.site_css5')
-@extends('admin.layout.site_js')
+@extends('front.layout.site_css5')
+@extends('front.layout.site_js')
 
 <body>
     <!----------------------- Main Container -------------------------->

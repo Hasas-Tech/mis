@@ -1,4 +1,4 @@
-@extends('admin.layout.app')
+@extends('front.layout.app')
 @section('content')
 
 <main class="bmd-layout-content">
@@ -11,7 +11,7 @@
                         <p class="pt-2">All Users</p>
                     </div>
                     <div class="col-md-6 text-right">
-                        <button class="btn btn-info" onclick="window.location='{{ route('admin.pages.users.addUser') }}'">New User</button>
+                        <button class="btn btn-info" onclick="window.location='{{ route('front.pages.users.addUser') }}'">New User</button>
                     </div>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-@extends('admin.layout.app')
+@extends('front.layout.app')
 @section('content')
     
 <main class="bmd-layout-content">
