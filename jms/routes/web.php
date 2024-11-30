@@ -25,4 +25,7 @@ Route::get('/allUsers', [userController::class, 'allUsers'])->name('admin.pages.
 Route::get('/allRole', [roleController::class, 'allRole'])->name('admin.pages.users.allRole');
 Route::get('/addRole', [roleController::class, 'addRole'])->name('admin.pages.users.addRole');
 Route::post('/addRole', [roleController::class, 'storeRole'])->name('admin.pages.users.addRole');
+Route::get('/delRole', [roleController::class, 'delRole'])->name('admin.pages.users.delRole');
+
+
 

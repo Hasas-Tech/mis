@@ -55,7 +55,7 @@
                             <label class="btn btn-outline-info" for="">{{ $role -> role_type }}</label>
                         </td>
                         <td class="text-center">
-                            <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
+                            <button type="button" href="" class="btn btn-success"><i class="fas fa-edit"></i></button>
                             <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
                         </td>
                     </tr>

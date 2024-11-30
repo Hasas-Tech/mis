@@ -29,12 +29,12 @@ class roleController extends Controller
         return view('admin.pages.users.addRole');
     }
 
-    public function delRole($role_id)
-    {
-        $allRoles = roles::find($role_id);
+    // public function delRole($role_id)
+    // {
+    //     $allRoles = roles::find('role_id' , $role_id);
 
-        $allRoles->delete();
+    //     $allRoles->delete();
 
-        return view('admin.pages.users.allRole');
-    }
+    //     return view('admin.pages.users.allRole');
+    // }
 }
