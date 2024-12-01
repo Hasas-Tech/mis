@@ -44,7 +44,7 @@
             <button class="btn btn-info" >English</button>
             <hr class="mt-0 ">
 
-                    <form>
+                    <form >
                         <div class="form-row mb-2">
                           <div class="col">
                             <label class="fw-bolder p-1">Name</label>
