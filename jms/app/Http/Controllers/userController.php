@@ -6,15 +6,18 @@ use Illuminate\Http\Request;
 
 class userController extends Controller
 {
-    public function userLogin(){
-        return view('userLogin');
+    public function userLogin()
+    {
+        return view('front.account.login');
     }
-    
-    public function addUser(){
+
+    public function addUser()
+    {
         return view('front.pages.users.addUser');
     }
 
-    public function allUsers(){
+    public function allUsers()
+    {
         return view('front.pages.users.allUsers');
     }
 }

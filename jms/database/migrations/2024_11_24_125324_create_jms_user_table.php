@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('role_type');
-            $table->foreign('role_type')->references('role_type')->on('roles');
+            $table->foreign('role_type')->references('role_type')->on('roles')->onUpdate('cascade')->onDelete('cascade');
             $table->string('image');
             $table->timestamps();
         });
