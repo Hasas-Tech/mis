@@ -18,7 +18,8 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('role_type');
-            $table->string('role_type');
+            $table->foreign('role_type')->references('role_type')->on('roles');
+            $table->string('image');
             $table->rememberToken();
             $table->timestamps();
         });
