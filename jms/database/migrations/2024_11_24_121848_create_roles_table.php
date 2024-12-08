@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('roles', function (Blueprint $table) {
-            $table->id('role_id'); // Primary key with custom column name
-            $table->string('role_type')->unique(); // Role name, with a unique constraint
-            $table->timestamps(); // Created at & Updated at timestamps
+            $table->id('role_id'); // Primary key
+            $table->string('role_type')->unique(); // Role type, with a unique constraint
+            $table->timestamps();
         });
     }
 

@@ -130,12 +130,12 @@
                 <!-- <span	class="badge badge-success">4</span> -->
                 <i class="fas fas fa-chevron-down arrow"></i></a>
             <div class="side-item-container hide animated">
-                <li class="side-item"><a href="{{ route ('front.pages.users.addUser') }}"><i class="fas fa-angle-right mr-2"></i>Create New User</a>
+                <li class="side-item"><a href="{{ route ('users.create') }}"><i class="fas fa-angle-right mr-2"></i>Create New User</a>
                 </li>
-                <li class="side-item"><a href="{{ route ('front.pages.users.allUsers') }}"><i
+                <li class="side-item"><a href="{{ route ('users.index') }}"><i
                             class="fas fa-angle-right mr-2"></i>All Users</a></li>
-                <li class="side-item"><a href="{{ route ('front.pages.users.addRole') }}"><i class="fas fa-angle-right mr-2"></i>New Role</a></li>
-                <li class="side-item"><a href="{{ route ('front.pages.users.allRole') }}"><i class="fas fa-angle-right mr-2"></i>All Roles</a></li>
+                {{-- <li class="side-item"><a href="{{ route ('users.add-role') }}"><i class="fas fa-angle-right mr-2"></i>New Role</a></li> --}}
+                {{-- <li class="side-item"><a href="{{ route ('users.all-role') }}"><i class="fas fa-angle-right mr-2"></i>All Roles</a></li> --}}
             </div>
         </ul>
     </div>

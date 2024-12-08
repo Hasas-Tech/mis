@@ -1,6 +1,6 @@
-@extends('front.layout.app')
+@extends('layout.app')
 @section('content')
-    
+
 <main class="bmd-layout-content">
     <div class="container-fluid ">
 

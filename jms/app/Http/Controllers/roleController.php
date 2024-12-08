@@ -2,39 +2,35 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Role;
 use Illuminate\Http\Request;
-use App\Models\roles;
-use Illuminate\Support\Facades;
-use App\Http\Controllers\DB;
 
-
-class roleController extends Controller
+class RoleController extends Controller
 {
-    public function addRole(){
-        return view('front.pages.users.addRole');
+    // Display a listing of the roles
+    public function index()
+    {
+        $roles = Role::all();
+        return response()->json($roles);
     }
 
-    public function allRole(){
+    // Store a newly created role in storage
+    public function store(Request $request)
+    {
+        $validatedData = $request->validate([
+            'role_type' => 'required|string|unique:roles',
+        ]);
 
-        // $allRoles = DB::table('roles')->select('role_id','role_type')->get();//-
-        $allRoles = \Illuminate\Support\Facades\DB::table('roles')->select('role_id','role_type')->get();//+
+        $role = Role::create($validatedData);
 
-        return view('front.pages.users.allRole')->with('allRoles', $allRoles);
+        return response()->json(['message' => 'Role created successfully!', 'role' => $role]);
     }
 
-    public function storeRole(Request $request){
-        $allRoles = new roles();
-        $allRoles -> role_type = $request -> role_type;
-        $allRoles->save();
-        return view('front.pages.users.addRole');
+    // Remove the specified role from storage
+    public function destroy(Role $role)
+    {
+        $role->delete();
+
+        return response()->json(['message' => 'Role deleted successfully!']);
     }
-
-    // public function delRole($role_id)
-    // {
-    //     $allRoles = roles::find('role_id' , $role_id);
-
-    //     $allRoles->delete();
-
-    //     return view('admin.pages.users.allRole');
-    // }
 }

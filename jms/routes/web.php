@@ -19,10 +19,7 @@ use App\Http\Controllers\roleController;
 
 Route::get('/', [dashboardController::class, 'dashboard'])->name('/');
 Route::get('/dashboard', [dashboardController::class, 'dashboard'])->name('dashboard');
-Route::get('/login', [userController::class, 'userLogin'])->name('front.account.login');
-Route::get('/addUser', [userController::class, 'addUser'])->name('front.pages.users.addUser');
-Route::get('/allUsers', [userController::class, 'allUsers'])->name('front.pages.users.allUsers');
-Route::get('/allRole', [roleController::class, 'allRole'])->name('front.pages.users.allRole');
-Route::get('/addRole', [roleController::class, 'addRole'])->name('front.pages.users.addRole');
-Route::post('/addRole', [roleController::class, 'storeRole'])->name('front.pages.users.addRole');
-Route::get('/delRole', [roleController::class, 'delRole'])->name('front.pages.users.delRole');
+Route::resource('users', UserController::class);
+Route::get('roles', [RoleController::class, 'index']);
+Route::post('roles', [RoleController::class, 'store']);
+Route::delete('roles/{role}', [RoleController::class, 'destroy']);
