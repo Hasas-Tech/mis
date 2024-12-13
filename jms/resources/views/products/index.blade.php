@@ -27,7 +27,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse ($users as $user)
+                        {{-- @forelse ($users as $user)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $user->name }}</td>
@@ -56,7 +56,7 @@
                             <tr>
                                 <td colspan="6" class="text-center">No users found.</td>
                             </tr>
-                        @endforelse
+                        @endforelse --}}
                     </tbody>
                 </table>
             </div>

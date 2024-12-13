@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Http\Controllers;
+
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -88,6 +90,7 @@ class UserController extends Controller
     {
         $user->delete();
 
-        return response()->json(['message' => 'User deleted successfully!']);
+        return redirect()->route('users.index')->with('success', 'User deleted successfully.');
+        // return response()->json(['message' => 'User deleted successfully!']);
     }
 }
