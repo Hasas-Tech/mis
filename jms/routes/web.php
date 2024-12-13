@@ -32,7 +32,7 @@ Route::delete('roles/{role}', [RoleController::class, 'destroy']);
 
 ///////////////// Product Route Group //////////////////////////////////
 Route::prefix('products')->group(function () {
-    Route::resource('products', ProductController::class);
+    Route::resource('create', ProductController::class);
     Route::get('/', [ProductController::class, 'index']);
     Route::get('/create', [ProductController::class, 'create']);
     Route::post('/', [ProductController::class, 'store']);

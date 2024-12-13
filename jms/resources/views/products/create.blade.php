@@ -47,7 +47,7 @@
                     {{-- @if (isset($users))
                         @method('PUT')
                     @endif --}}
-
+                    {{-- @method('PUT') --}}
                     <div class="form-row mb-2">
                         <!-- Name Field -->
                         <div class="col">
@@ -92,16 +92,16 @@
                     <div class="form-row mb-2">
                         <!-- Password Fields -->
                         <div class="col">
-                            <label for="category_id" class="fw-bolder p-1">Product Price</label>
-                            <input type="text" class="form-control" placeholder="Enter Product Price" name="category_id"
-                                id="category_id">
-                            @error('category_id')
-                                <div class="text-danger">{{ $message }}</div>
-                            @enderror
+                            <label for="category_type">Category</label>
+                            <select name="category_type" class="form-control" required>
+                                @foreach ($catetories as $category)
+                                    <option value="{{ $category->id }}">{{ $category->type }}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="col">
-                            <label for="image_url" class="fw-bolder p-1">Product Price</label>
-                            <input type="file" class="form-control" placeholder="Enter stock_quantity" name="image_url"
+                            <label for="image_url" class="fw-bolder p-1">Product Image</label>
+                            <input type="text" class="form-control" placeholder="Enter stock_quantity" name="image_url"
                                 id="image_url">
                             @error('image_url')
                                 <div class="text-danger">{{ $message }}</div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Products;
+use App\Models\Categories;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -21,9 +22,11 @@ class ProductController extends Controller
      */
     public function create()
     {
+        $catetories = Categories::all();
+        return view('products.create', compact('catetories'));
         // $product = Products::all();
         // return view('products.create', compact('products', $product));
-        return view('products.create');
+        // return view('products.create');
     }
 
     /**
@@ -31,14 +34,24 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $validated = $request->validate([
             'name' => 'required',
             'description' => 'required',
             'price' => 'required|numeric',
             'stock_quantity' => 'required|integer',
+            'category_type' => 'required|exists:categories,type', // Ensure the role exists in the roles table
+            'image_url' => 'required',
         ]);
 
-        Products::create($request->all());
+        // Products::create($request->all());
+
+        Products::create([
+            'name' => $validated['name'],
+            'description' => $validated['description'],
+            'price' => $validated['price'],
+            'stock_quantity' => $validated['stock_quantity'],
+            'catetory_type' => $validated['category_type'],
+        ]);
 
         return redirect()->route('products.index');
     }
@@ -75,4 +88,10 @@ class ProductController extends Controller
     {
         //
     }
+
+    // public function catetories()
+    // {
+    //     $categories = Categories::all();
+    //     return view('products.create', compact('categories', $categories));
+    // }
 }
