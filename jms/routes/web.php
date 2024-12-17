@@ -30,13 +30,14 @@ Route::get('roles', [RoleController::class, 'index']);
 Route::post('roles', [RoleController::class, 'store']);
 Route::delete('roles/{role}', [RoleController::class, 'destroy']);
 
+Route::resource('products', ProductController::class);
+
 ///////////////// Product Route Group //////////////////////////////////
-Route::prefix('products')->group(function () {
-    Route::resource('create', ProductController::class);
-    Route::get('/', [ProductController::class, 'index']);
-    Route::get('/create', [ProductController::class, 'create']);
-    Route::post('/', [ProductController::class, 'store']);
-    Route::get('/edit/{product}', [ProductController::class, 'edit']);
-    Route::put('/edit/{product}', [ProductController::class, 'update']);
-    Route::delete('/delete/{product}', [ProductController::class, 'destroy']);
-});
+// Route::prefix('products')->group(function () {
+    // Route::get('/', [ProductController::class, 'index']);
+    // Route::get('/create', [ProductController::class, 'create']);
+    // Route::post('/', [ProductController::class, 'store']);
+    // Route::get('/edit/{product}', [ProductController::class, 'edit']);
+    // Route::put('/edit/{product}', [ProductController::class, 'update']);
+    // Route::delete('/delete/{product}', [ProductController::class, 'destroy']);
+// });

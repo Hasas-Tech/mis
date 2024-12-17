@@ -99,19 +99,15 @@
         </ul>
 
         <ul class="side a-collapse short">
-            <a class="ul-text"><i class="fas fa-poll mr-1"></i> Polls
+            <a class="ul-text"><i class="fas fa-poll mr-1"></i> Products
                 <!-- <span	class="badge badge-success">4</span> -->
                 <i class="fas fas fa-chevron-down arrow"></i></a>
             <div class="side-item-container hide animated">
-                <li class="side-item"><a href="./color.html"><i class="fas fa-angle-right mr-2"></i>Color</a>
+                <li class="side-item"><a href="{{ route('products.index') }}"><i class="fas fa-angle-right mr-2"></i>Product View</a>
                 </li>
-                <li class="side-item"><a href="./typo.html"><i
-                            class="fas fa-angle-right mr-2"></i>Typography</a></li>
-                <li class="side-item"><a href="./dark-mode.html"><i class="fas fa-angle-right mr-2"></i>Dark
-                        Mode</a></li>
-                <li class="side-item"><a href="./rtl.html"><i class="fas fa-angle-right mr-2"></i>Rtl</a></li>
-                <li class="side-item"><a href="./sidebar.html"><i
-                            class="fas fa-angle-right mr-2"></i>SideBar</a></li>
+                <li class="side-item">
+                    <a href="{{ route('products.create') }}">
+                        <i class="fas fa-angle-right mr-2"></i>Add Products</a></li>
             </div>
         </ul>
 
