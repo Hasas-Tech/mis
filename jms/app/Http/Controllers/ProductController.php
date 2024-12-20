@@ -42,19 +42,20 @@ class ProductController extends Controller
         //     'image_url' => 'required',
         // ]);
         // dd($request);
-        $catetories = Categories::all();
-        $c_type = $catetories->type;
-        $c_type = $request->catetory_type;
+        $input = $request->all();
+        Product::create($input);
+        return redirect()->route('product.index')->with('success', 'Product created successfully.');
 
-        $product = new Product;
-        $product->name = $request->name;
-        $product->description = $request->description;
-        $product->price = $request->price;
-        $product->stock_quantity = $request->stock_quantity;
-        $product->category_type = $c_type;
-        $product->image_url = $request->image_url;
-        $product->save();
-        return redirect()->route('products.index')->with('sucess', 'Successfully add');
+
+        // $product = new Product;
+        // $product->name = $request->name;
+        // $product->description = $request->description;
+        // $product->price = $request->price;
+        // $product->stock_quantity = $request->stock_quantity;
+        // $product->cat_id = $request->category_type;
+        // $product->image_url = $request->image_url;
+        // $product->save();
+        // return redirect()->route('products.index')->with('sucess', 'Successfully add');
     }
 
     /**

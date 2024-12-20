@@ -9,5 +9,10 @@ class Categories extends Model
 {
     use HasFactory;
     protected $table = 'categories';
+    protected $primaryKey = 'id';
     protected $fillable = ['type'];
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
 }
