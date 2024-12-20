@@ -87,10 +87,10 @@
                 <!-- <span	class="badge badge-success">4</span> -->
                 <i class="fas fas fa-chevron-down arrow"></i></a>
             <div class="side-item-container hide animated">
-                <li class="side-item"><a href="{{ route('products.create') }}"><i
+                <li class="side-item"><a href="{{ route('product.create') }}"><i
                             class="fas fa-angle-right mr-2"></i>Create Product</a>
                 </li>
-                <li class="side-item"><a href="{{ route('products.index') }}"><i class="fas fa-angle-right mr-2"></i>All
+                <li class="side-item"><a href="{{ route('product.index') }}"><i class="fas fa-angle-right mr-2"></i>All
                         Product</a></li>
                 {{-- <li class="side-item"><a href="{{ route('users.add-role') }}"><i class="fas fa-angle-right mr-2"></i>New
                         Role</a></li>
@@ -138,11 +138,11 @@
                 <!-- <span	class="badge badge-success">4</span> -->
                 <i class="fas fas fa-chevron-down arrow"></i></a>
             <div class="side-item-container hide animated">
-                <li class="side-item"><a href="{{ route('products.index') }}"><i
+                <li class="side-item"><a href="{{ route('product.index') }}"><i
                             class="fas fa-angle-right mr-2"></i>Product View</a>
                 </li>
                 <li class="side-item">
-                    <a href="{{ route('products.create') }}">
+                    <a href="{{ route('product.create') }}">
                         <i class="fas fa-angle-right mr-2"></i>Add Products</a>
                 </li>
             </div>

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Products;
+use App\Models\Product;
 use App\Models\Categories;
+use App\Http\Requests\StoreProductRequest;
+use App\Http\Requests\UpdateProductRequest;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -13,7 +15,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $product = Products::all();
+        $product = Product::all();
         return view('products.index', compact('product'));
     }
 
@@ -31,6 +33,51 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        // $request->validate([
+        //     'name' => 'required',
+        //     'description' => 'required',
+        //     'price' => 'required|numeric',
+        //     'stock_quantity' => 'required|integer',
+        //     'category_type' => 'required|exists:categories,type', // Ensure the role exists in the roles table
+        //     'image_url' => 'required',
+        // ]);
+        // dd($request);
+        $catetories = Categories::all();
+        $c_type = $catetories->type;
+        $c_type = $request->catetory_type;
+
+        $product = new Product;
+        $product->name = $request->name;
+        $product->description = $request->description;
+        $product->price = $request->price;
+        $product->stock_quantity = $request->stock_quantity;
+        $product->category_type = $c_type;
+        $product->image_url = $request->image_url;
+        $product->save();
+        return redirect()->route('products.index')->with('sucess', 'Successfully add');
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(Product $product)
+    {
+        return view('products.show', compact('product'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(Product $product)
+    {
+        return view('products.edit', compact('product'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, Product $product)
+    {
         $request->validate([
             'name' => 'required',
             'description' => 'required',
@@ -39,7 +86,6 @@ class ProductController extends Controller
             'category_type' => 'required|exists:categories,type', // Ensure the role exists in the roles table
             'image_url' => 'required',
         ]);
-        $product = new Products;
         $product->name = $request->name;
         $product->description = $request->description;
         $product->price = $request->price;
@@ -47,67 +93,14 @@ class ProductController extends Controller
         $product->catetory_type = $request->category_type;
         $product->image_url = $request->image_url;
         $product->save();
-        return redirect()->route('products.index')->with('sucess', 'Successfully add');
-        // $validated = $request->validate([
-        //     'name' => 'required',
-        //     'description' => 'required',
-        //     'price' => 'required|numeric',
-        //     'stock_quantity' => 'required|integer',
-        //     'category_type' => 'required|exists:categories,type', // Ensure the role exists in the roles table
-        //     'image_url' => 'required',
-        // ]);
-
-        // // Products::create($validated->all());
-        // // dd($validated->all());
-        // Products::create([
-        //     'name' => $validated['name'],
-        //     'description' => $validated['description'],
-        //     'price' => $validated['price'],
-        //     'stock_quantity' => $validated['stock_quantity'],
-        //     'catetory_type' => $validated['category_type'],
-        //     'image_url' => $validated['image_url'],
-        // ]);
-        // // $validated->save();
-
-        // return redirect()->route('products.index');
-    }
-
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
+        return redirect()->route('products.index')->with('sucess', 'Successfully updated');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Product $product)
     {
         //
     }
-
-    // public function catetories()
-    // {
-    //     $categories = Categories::all();
-    //     return view('products.create', compact('categories', $categories));
-    // }
 }

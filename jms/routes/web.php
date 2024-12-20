@@ -30,7 +30,7 @@ Route::get('edit/{users}/edit', [UserController::class, 'edit'])->name('users.ed
 Route::get('roles', [RoleController::class, 'index']);
 Route::post('roles', [RoleController::class, 'store']);
 Route::delete('roles/{role}', [RoleController::class, 'destroy']);
-
-Route::resource('products', ProductController::class);
-
+///////////////// Employee Route //////////////////////////////////////
 Route::resource('employees', EmployeesController::class);
+///////////////// Product Route //////////////////////////////////////
+Route::resource('product', ProductController::class);

@@ -20,43 +20,43 @@
                         <tr>
                             <th>#</th>
                             <th>Name</th>
-                            <th>Email</th>
-                            <th>Role</th>
-                            <th>Image</th>
-                            <th>Actions</th>
+                            <th>Desc</th>
+                            <th>Price</th>
+                            <th>type</th>
+                            <th>USEL</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {{-- @forelse ($users as $user)
+                        @forelse ($product as $user)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $user->name }}</td>
-                                <td>{{ $user->email }}</td>
-                                <td>{{ ucfirst($user->role_type) }}</td>
+                                <td>{{ $user->description }}</td>
+                                <td>{{ $user->price }}</td>
                                 <td>
-                                    @if ($user->image)
-                                        <img src="{{ asset('storage/' . $user->image) }}" alt="User Image" width="50"
-                                            height="50">
-                                    @else
-                                        No Image
-                                    @endif
+                                    {{ $user->stock_quantity }}
                                 </td>
                                 <td>
-                                    <a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-primary">Edit</a>
+                                    {{ $user->image_url }}
+                                </td>
+                                <td>
+                                    {{ $user->category_type }}
+
+                                    {{-- <a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-primary">Edit</a>
                                     <form action="{{ route('users.destroy', $user->id) }}" method="POST"
                                         style="display:inline;">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-sm btn-danger"
                                             onclick="return confirm('Are you sure?')">Delete</button>
-                                    </form>
+                                    </form> --}}
                                 </td>
                             </tr>
                         @empty
                             <tr>
                                 <td colspan="6" class="text-center">No users found.</td>
                             </tr>
-                        @endforelse --}}
+                        @endforelse
                     </tbody>
                 </table>
             </div>

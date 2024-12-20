@@ -42,12 +42,8 @@
 
                 <button class="btn btn-info">English</button>
                 <hr class="mt-0 ">
-                <form action="{{ route('products.store') }}" method="POST">
+                <form action="{{ route('product.store') }}" method="POST">
                     @csrf
-                    {{-- @if (isset($users))
-                        @method('PUT')
-                    @endif --}}
-                    {{-- @method('PUT') --}}
                     <div class="form-row mb-2">
                         <!-- Name Field -->
                         <div class="col">

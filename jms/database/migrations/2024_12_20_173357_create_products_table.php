@@ -18,8 +18,8 @@ return new class extends Migration
             $table->decimal('price', 8, 2);
             $table->integer('stock_quantity');
             $table->string('category_type'); // Foreign key
-            $table->foreign('category_type')->references('type')->on('categories')->onDelete('cascade');
-            $table->string('image_url')->nullable();
+            $table->foreign('category_type')->references('type')->on('categories');
+            $table->string('image_url');
             $table->timestamps();
         });
     }
