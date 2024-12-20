@@ -42,29 +42,27 @@
 
                 <button class="btn btn-info">English</button>
                 <hr class="mt-0 ">
-                <form action="{{ route('products.store') }}" method="POST">
+                <form class="col-md-4 m-auto" action="{{ route('employees.store') }}" method="POST">
                     @csrf
-                    {{-- @if (isset($users))
-                        @method('PUT')
-                    @endif --}}
-                    {{-- @method('PUT') --}}
                     <div class="form-row mb-2">
                         <!-- Name Field -->
                         <div class="col">
-                            <label for="name" class="fw-bolder p-1">Product Name</label>
+                            <label for="name" class="fw-bolder p-1">Employee Name</label>
                             <input type="text" class="form-control" placeholder="Enter Name" name="name"
                                 id="name">
                             @error('name')
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
+                    </div>
 
+                    <div class="form-row mb-2">
                         <!-- Email Field -->
                         <div class="col">
-                            <label for="description" class="fw-bolder p-1">Product Description</label>
+                            <label for="position" class="fw-bolder p-1">position</label>
                             <input type="text" class="form-control" placeholder="Enter Product Description"
-                                name="description" id="description">
-                            @error('description')
+                                name="position" id="position">
+                            @error('position')
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
@@ -73,37 +71,9 @@
                     <div class="form-row mb-2">
                         <!-- Password Fields -->
                         <div class="col">
-                            <label for="price" class="fw-bolder p-1">Product Price</label>
-                            <input type="text" class="form-control" placeholder="Enter Product Price" name="price"
-                                id="price">
+                            <label for="salary" class="fw-bolder p-1">Product Price</label>
+                            <input class="form-control" type="number" name="salary" id="salary" step="0.01">
                             @error('price')
-                                <div class="text-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-                        <div class="col">
-                            <label for="stock_quantity" class="fw-bolder p-1">Product Price</label>
-                            <input type="text" class="form-control" placeholder="Enter stock_quantity"
-                                name="stock_quantity" id="stock_quantity">
-                            @error('stock_quantity')
-                                <div class="text-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="form-row mb-2">
-                        <!-- Password Fields -->
-                        <div class="col">
-                            <label for="category_type">Category</label>
-                            <select name="category_type" class="form-control" required>
-                                @foreach ($catetories as $category)
-                                    <option value="{{ $category->id }}">{{ $category->type }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="col">
-                            <label for="image_url" class="fw-bolder p-1">Product Image</label>
-                            <input type="text" class="form-control" placeholder="Enter stock_quantity" name="image_url"
-                                id="image_url">
-                            @error('image_url')
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>

@@ -24,9 +24,6 @@ class ProductController extends Controller
     {
         $catetories = Categories::all();
         return view('products.create', compact('catetories'));
-        // $product = Products::all();
-        // return view('products.create', compact('products', $product));
-        // return view('products.create');
     }
 
     /**
@@ -34,7 +31,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
+        $request->validate([
             'name' => 'required',
             'description' => 'required',
             'price' => 'required|numeric',
@@ -42,18 +39,37 @@ class ProductController extends Controller
             'category_type' => 'required|exists:categories,type', // Ensure the role exists in the roles table
             'image_url' => 'required',
         ]);
+        $product = new Products;
+        $product->name = $request->name;
+        $product->description = $request->description;
+        $product->price = $request->price;
+        $product->stock_quantity = $request->stock_quantity;
+        $product->catetory_type = $request->category_type;
+        $product->image_url = $request->image_url;
+        $product->save();
+        return redirect()->route('products.index')->with('sucess', 'Successfully add');
+        // $validated = $request->validate([
+        //     'name' => 'required',
+        //     'description' => 'required',
+        //     'price' => 'required|numeric',
+        //     'stock_quantity' => 'required|integer',
+        //     'category_type' => 'required|exists:categories,type', // Ensure the role exists in the roles table
+        //     'image_url' => 'required',
+        // ]);
 
-        // Products::create($request->all());
+        // // Products::create($validated->all());
+        // // dd($validated->all());
+        // Products::create([
+        //     'name' => $validated['name'],
+        //     'description' => $validated['description'],
+        //     'price' => $validated['price'],
+        //     'stock_quantity' => $validated['stock_quantity'],
+        //     'catetory_type' => $validated['category_type'],
+        //     'image_url' => $validated['image_url'],
+        // ]);
+        // // $validated->save();
 
-        Products::create([
-            'name' => $validated['name'],
-            'description' => $validated['description'],
-            'price' => $validated['price'],
-            'stock_quantity' => $validated['stock_quantity'],
-            'catetory_type' => $validated['category_type'],
-        ]);
-
-        return redirect()->route('products.index');
+        // return redirect()->route('products.index');
     }
 
 

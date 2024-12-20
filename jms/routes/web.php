@@ -6,6 +6,7 @@ use App\Http\Controllers\userController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\roleController;
+use App\Http\Controllers\EmployeesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,12 +33,4 @@ Route::delete('roles/{role}', [RoleController::class, 'destroy']);
 
 Route::resource('products', ProductController::class);
 
-///////////////// Product Route Group //////////////////////////////////
-// Route::prefix('products')->group(function () {
-    // Route::get('/', [ProductController::class, 'index']);
-    // Route::get('/create', [ProductController::class, 'create']);
-    // Route::post('/', [ProductController::class, 'store']);
-    // Route::get('/edit/{product}', [ProductController::class, 'edit']);
-    // Route::put('/edit/{product}', [ProductController::class, 'update']);
-    // Route::delete('/delete/{product}', [ProductController::class, 'destroy']);
-// });
+Route::resource('employees', EmployeesController::class);
