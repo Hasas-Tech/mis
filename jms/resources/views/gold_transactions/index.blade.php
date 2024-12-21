@@ -39,12 +39,13 @@
                                 <td>${{ number_format($transaction->price_per_ounce, 2) }}</td>
                                 <td>${{ number_format($transaction->total_amount, 2) }}</td>
                                 <td>
-                                    <a href="{{ route('gold_transactions.edit', $transaction->id) }}">Edit</a>
+                                    <a class="btn btn-success text-white"
+                                        href="{{ route('gold_transactions.edit', $transaction->id) }}">Edit</a>
                                     <form action="{{ route('gold_transactions.destroy', $transaction->id) }}" method="POST"
                                         style="display:inline;">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit">Delete</button>
+                                        <button class="btn btn-danger text-white" type="submit">Delete</button>
                                     </form>
                                 </td>
                             </tr>
