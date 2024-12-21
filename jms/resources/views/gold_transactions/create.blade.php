@@ -1,39 +1,3 @@
-<!-- resources/views/gold_transactions/create.blade.php -->
-@extends('layouts.app')
-
-@section('content')
-    <h1>Create Transaction</h1>
-
-    <form action="{{ route('gold_transactions.store') }}" method="POST">
-        @csrf
-        <div>
-            <label for="transaction_type">Transaction Type:</label>
-            <select name="transaction_type" required>
-                <option value="buy">Buy</option>
-                <option value="sell">Sell</option>
-            </select>
-        </div>
-        <div>
-            <label for="gold_weight_tola">Gold Weight (Tola):</label>
-            <input type="text" name="gold_weight_tola" required>
-        </div>
-        <div>
-            <label for="gold_weight_ounce">Gold Weight (Ounce):</label>
-            <input type="text" name="gold_weight_ounce" required>
-        </div>
-        <div>
-            <label for="price_per_tola">Price per Tola:</label>
-            <input type="text" name="price_per_tola" required>
-        </div>
-        <div>
-            <label for="price_per_ounce">Price per Ounce:</label>
-            <input type="text" name="price_per_ounce" required>
-        </div>
-        <button type="submit">Create</button>
-    </form>
-@endsection
-
-
 @extends('layout.app')
 @section('content')
     <main class="bmd-layout-content">
@@ -104,19 +68,32 @@
                     <div class="form-row mb-2">
                         <!-- Name Field -->
                         <div class="col">
-                            <label for="transaction_type">transaction_type</label>
-                            <select name="transaction_type" class="form-control" required>
-                                <option value="buy">Buy</option>
-                                <option value="sell">Sell</option>
-                            </select>
+                            <label for="gold_weight_ounce" class="fw-bolder p-1">gold_weight_ounce</label>
+                            <input type="text" class="form-control" placeholder="Enter Product Description"
+                                name="gold_weight_ounce" id="gold_weight_ounce">
+                            @error('gold_weight_ounce')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
 
                         <!-- Email Field -->
                         <div class="col">
-                            <label for="gold_weight_tola" class="fw-bolder p-1">gold_weight_tola (grams):</label>
+                            <label for="price_per_tola" class="fw-bolder p-1">price_per_tola</label>
                             <input type="text" class="form-control" placeholder="Enter Product Description"
-                                name="gold_weight_tola" id="gold_weight_tola">
-                            @error('gold_weight_tola')
+                                name="price_per_tola" id="price_per_tola">
+                            @error('price_per_tola')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="form-row mb-2">
+                        <!-- Name Field -->
+                        <div class="col">
+                            <label for="price_per_ounce" class="fw-bolder p-1">price_per_ounce:</label>
+                            <input type="text" class="form-control" placeholder="Enter Product Description"
+                                name="price_per_ounce" id="price_per_ounce">
+                            @error('price_per_ounce')
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>

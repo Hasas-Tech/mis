@@ -1,46 +1,3 @@
-<!-- resources/views/gold_transactions/index.blade.php -->
-@extends('layouts.app')
-
-@section('content')
-    <h1>Gold Transactions</h1>
-    <a href="{{ route('gold_transactions.create') }}">Create Transaction</a>
-    <table>
-        <thead>
-            <tr>
-                <th>Transaction Type</th>
-                <th>Gold Weight (Tola)</th>
-                <th>Gold Weight (Ounce)</th>
-                <th>Price per Tola</th>
-                <th>Price per Ounce</th>
-                <th>Total Amount</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($transactions as $transaction)
-                <tr>
-                    <td>{{ ucfirst($transaction->transaction_type) }}</td>
-                    <td>{{ number_format($transaction->gold_weight_tola, 2) }}</td>
-                    <td>{{ number_format($transaction->gold_weight_ounce, 2) }}</td>
-                    <td>${{ number_format($transaction->price_per_tola, 2) }}</td>
-                    <td>${{ number_format($transaction->price_per_ounce, 2) }}</td>
-                    <td>${{ number_format($transaction->total_amount, 2) }}</td>
-                    <td>
-                        <a href="{{ route('gold_transactions.edit', $transaction->id) }}">Edit</a>
-                        <form action="{{ route('gold_transactions.destroy', $transaction->id) }}" method="POST"
-                            style="display:inline;">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit">Delete</button>
-                        </form>
-                    </td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
-@endsection
-
-
 <!-- resources/views/invoices/index.blade.php -->
 @extends('layout.app')
 @section('content')
@@ -83,8 +40,8 @@
                                 <td>${{ number_format($transaction->total_amount, 2) }}</td>
                                 <td>
                                     <a href="{{ route('gold_transactions.edit', $transaction->id) }}">Edit</a>
-                                    <form action="{{ route('gold_transactions.destroy', $transaction->id) }}"
-                                        method="POST" style="display:inline;">
+                                    <form action="{{ route('gold_transactions.destroy', $transaction->id) }}" method="POST"
+                                        style="display:inline;">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit">Delete</button>
