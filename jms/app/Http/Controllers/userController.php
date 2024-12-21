@@ -13,7 +13,7 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
-        return view('users.all-users', compact('users'));
+        return view('users.index', compact('users'));
     }
 
 
@@ -21,7 +21,7 @@ class UserController extends Controller
     public function create()
     {
         $allRole = Role::all();
-        return view('users.add-user', compact('allRole'));
+        return view('users.create', compact('allRole'));
     }
 
 

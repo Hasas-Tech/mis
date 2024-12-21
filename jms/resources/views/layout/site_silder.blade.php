@@ -16,7 +16,7 @@
             <a href="{{ route('dashboard') }}" class="side-item selected"><i class="fas fa-home mr-1"></i>Dashboard</a>
         </li>
 
-        <ul class="side a-collapse short">
+        {{-- <ul class="side a-collapse short">
             <a class="ul-text"><i class="fab fa-usps mr-1"></i> Posts
                 <!-- <span class="badge badge-info">4</span> -->
                 <i class="fas fa-chevron-down arrow"></i></a>
@@ -62,6 +62,62 @@
                 <li class="side-item"><a href="./glogin.html"><i class="fas fa-angle-right mr-2"></i>Login
                         Colored</a></li>
             </div>
+        </ul> --}}
+
+        <ul class="side a-collapse short">
+            <a class="ul-text"><i class="fa fa-users" aria-hidden="true"></i> Customers
+                <!-- <span class="badge badge-info">4</span> -->
+                <i class="fas fa-chevron-down arrow"></i></a>
+            <div class="side-item-container">
+                <li class="side-item"><a href="{{ route('customers.index') }}"><i
+                            class="fas fa-angle-right mr-2"></i>All Customers</a>
+                </li>
+                <li class="side-item"><a href="{{ route('customers.create') }}"><i
+                            class="fas fa-angle-right mr-2"></i>Add Customer</a></li>
+            </div>
+        </ul>
+
+        <ul class="side a-collapse short">
+            <a class="ul-text"><i class="fab fa-slideshare mr-1"></i> Invoices
+                <!-- <span class="badge badge-info">4</span> -->
+                <i class="fas fa-chevron-down arrow"></i></a>
+            <div class="side-item-container">
+                <li class="side-item"><a href="{{ route('invoices.index') }}"><i class="fas fa-angle-right mr-2"></i>All
+                        Invoice</a>
+                </li>
+                <li class="side-item"><a href="{{ route('invoices.create') }}"><i
+                            class="fas fa-angle-right mr-2"></i>Add Invoice</a></li>
+            </div>
+        </ul>
+
+        <ul class="side a-collapse short">
+            <a class="ul-text"><i class="fab fa-slideshare mr-1"></i> Gold Transactions
+                <!-- <span class="badge badge-info">4</span> -->
+                <i class="fas fa-chevron-down arrow"></i></a>
+            <div class="side-item-container">
+                <li class="side-item"><a href="{{ route('gold_transactions.index') }}"><i
+                            class="fas fa-angle-right mr-2"></i>All Gold
+                        Transactions</a>
+                </li>
+                <li class="side-item"><a href="{{ route('gold_transactions.create') }}"><i
+                            class="fas fa-angle-right mr-2"></i>Add
+                        Transaction</a></li>
+            </div>
+        </ul>
+
+        <ul class="side a-collapse short">
+            <a class="ul-text"><i class="fab fa-slideshare mr-1"></i> Balance
+                <!-- <span class="badge badge-info">4</span> -->
+                <i class="fas fa-chevron-down arrow"></i></a>
+            <div class="side-item-container">
+                <li class="side-item"><a href="{{ route('balances.index') }}"><i class="fas fa-angle-right mr-2"></i>All
+                        Balance
+                        Transactions</a>
+                </li>
+                <li class="side-item"><a href="{{ route('balances.create') }}"><i
+                            class="fas fa-angle-right mr-2"></i>Add
+                        Balance</a></li>
+            </div>
         </ul>
 
         <ul class="side a-collapse short">
@@ -92,10 +148,6 @@
                 </li>
                 <li class="side-item"><a href="{{ route('product.index') }}"><i class="fas fa-angle-right mr-2"></i>All
                         Product</a></li>
-                {{-- <li class="side-item"><a href="{{ route('users.add-role') }}"><i class="fas fa-angle-right mr-2"></i>New
-                        Role</a></li>
-                <li class="side-item"><a href="{{ route('users.all-role') }}"><i class="fas fa-angle-right mr-2"></i>All
-                        Roles</a></li> --}}
             </div>
         </ul>
 
@@ -134,16 +186,16 @@
         </ul>
 
         <ul class="side a-collapse short">
-            <a class="ul-text"><i class="fas fa-poll mr-1"></i> Products
+            <a class="ul-text"><i class="fab fa-slideshare mr-1"></i> Order
                 <!-- <span	class="badge badge-success">4</span> -->
                 <i class="fas fas fa-chevron-down arrow"></i></a>
             <div class="side-item-container hide animated">
                 <li class="side-item"><a href="{{ route('product.index') }}"><i
-                            class="fas fa-angle-right mr-2"></i>Product View</a>
+                            class="fas fa-angle-right mr-2"></i>All Order</a>
                 </li>
                 <li class="side-item">
                     <a href="{{ route('product.create') }}">
-                        <i class="fas fa-angle-right mr-2"></i>Add Products</a>
+                        <i class="fas fa-angle-right mr-2"></i>Add Order</a>
                 </li>
             </div>
         </ul>
@@ -167,7 +219,8 @@
                 <li class="side-item"><a href="{{ route('users.create') }}"><i
                             class="fas fa-angle-right mr-2"></i>Create New User</a>
                 </li>
-                <li class="side-item"><a href="{{ route('users.index') }}"><i class="fas fa-angle-right mr-2"></i>All
+                <li class="side-item"><a href="{{ route('users.index') }}"><i
+                            class="fas fa-angle-right mr-2"></i>All
                         Users</a></li>
                 {{-- <li class="side-item"><a href="{{ route ('users.add-role') }}"><i class="fas fa-angle-right mr-2"></i>New Role</a></li> --}}
                 {{-- <li class="side-item"><a href="{{ route ('users.all-role') }}"><i class="fas fa-angle-right mr-2"></i>All Roles</a></li> --}}
