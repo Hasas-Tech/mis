@@ -7,6 +7,8 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\roleController;
 use App\Http\Controllers\EmployeesController;
+use App\Http\Controllers\InvoiceController;
+use App\Http\Controllers\CustomerController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,3 +36,7 @@ Route::delete('roles/{role}', [RoleController::class, 'destroy']);
 Route::resource('employees', EmployeesController::class);
 ///////////////// Product Route //////////////////////////////////////
 Route::resource('product', ProductController::class);
+///////////////// Customer Route //////////////////////////////////////
+Route::resource('customers', CustomerController::class);
+///////////////// Invoice Route //////////////////////////////////////
+Route::resource('invoices', InvoiceController::class);
