@@ -40,7 +40,7 @@ class CustomerController extends Controller
 
     public function show(Customer $customer)
     {
-        return view('customers.show', compact('customer'));
+        return view('customers.index', compact('customer'));
     }
 
     /**
@@ -48,15 +48,24 @@ class CustomerController extends Controller
      */
     public function edit(Customer $customer)
     {
-        //
+        return view('customers.edit', compact('customer'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateCustomerRequest $request, Customer $customer)
+    public function update(Request $request, Customer $customer)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required|string',
+            'email' => 'required|email|unique:customers,email,' . $customer->id,
+            'phone_number' => 'required|string',
+            'address' => 'required|string',
+        ]);
+
+        $customer->update($validated);
+
+        return redirect()->route('customers.show', $customer);
     }
 
     /**
@@ -64,6 +73,7 @@ class CustomerController extends Controller
      */
     public function destroy(Customer $customer)
     {
-        //
+        $customer->delete();
+        return redirect()->route('customers.index');
     }
 }

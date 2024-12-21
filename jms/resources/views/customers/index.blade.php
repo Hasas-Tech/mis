@@ -35,14 +35,13 @@
                                 <td>{{ $customer->phone_number }}</td>
                                 <td>{{ $customer->address }}</td>
                                 <td>
-                                    {{-- <a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-primary">Edit</a>
-                                    <form action="{{ route('users.destroy', $user->id) }}" method="POST"
+                                    <a href="{{ route('customers.edit', $customer->id) }}">Edit</a>
+                                    <form action="{{ route('customers.destroy', $customer->id) }}" method="POST"
                                         style="display:inline;">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-sm btn-danger"
-                                            onclick="return confirm('Are you sure?')">Delete</button>
-                                    </form> --}}
+                                        <button type="submit">Delete</button>
+                                    </form>
                                 </td>
                             </tr>
                         @empty
