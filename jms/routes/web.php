@@ -9,6 +9,8 @@ use App\Http\Controllers\roleController;
 use App\Http\Controllers\EmployeesController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\BalanceController;
+use App\Http\Controllers\GoldTransactionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,3 +42,7 @@ Route::resource('product', ProductController::class);
 Route::resource('customers', CustomerController::class);
 ///////////////// Invoice Route //////////////////////////////////////
 Route::resource('invoices', InvoiceController::class);
+
+Route::resource('balances', BalanceController::class);
+
+Route::resource('gold_transactions', GoldTransactionController::class);
