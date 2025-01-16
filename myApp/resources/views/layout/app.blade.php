@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Jewellery MS</title>
+    <title>{{ config('app.name', 'MyApp') }}</title>
     <meta name="google-site-verification" content="kk5Fdpx355TSI9qMxCMUXQ9bBhFZu0DveMlcV-H1Qzk" />
     <meta name="description" content="nozha admin panel fully support rtl with complete dark mode css to use. ">
     <meta name=”robots” content="index, follow">
